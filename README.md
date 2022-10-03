@@ -1,2 +1,6 @@
 # caddy-cloudflare
-Caddy container with cloudflare dns challenge extension.
+`caddy:latest` with [dns.providers.cloudflare](https://github.com/caddy-dns/cloudflare) module.
+
+```
+podman pull ghcr.io/honnip/caddy-cloudflare:latest
+```
