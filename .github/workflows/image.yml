@@ -33,4 +33,6 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     runs-on: ubuntu-latest
     steps:
-    - run: echo There's no new commit.
+    - run: |
+        echo There's no new commit.
+        exit 0;
