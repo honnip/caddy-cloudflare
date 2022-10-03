@@ -34,5 +34,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo There's no new commit.
+        echo There\'s no new commit.
         exit 0;
