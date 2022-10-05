@@ -44,4 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: check
     if: needs.check.outputs.status == 'failure'
+    steps:
+      - name: say
+        run: echo "There's no new commit"
     
