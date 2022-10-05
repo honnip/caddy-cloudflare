@@ -39,3 +39,9 @@ jobs:
         push: true
         tags: |
           ghcr.io/${{ github.repository_owner }}/caddy-cloudflare:latest
+      
+  make-action-success:
+    runs-on: ubuntu-latest
+    needs: check
+    if: needs.check.outputs.status == 'failure'
+    
