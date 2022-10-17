@@ -8,11 +8,12 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps: 
-    - name: check if there's new commit
+    - name: Check if there's new commit
       id: check
       run: |
-        echo check=$(curl -s https://api.github.com/repos/caddyserver/caddy-docker/commits/master | jq -r "((now - (.commit.author.date | fromdateiso8601) )  / (60*60*24)  | trunc)") >> $GITHUB_ENV
-        echo "${{ env.check }}"
+        check=$(curl -s https://api.github.com/repos/caddyserver/caddy-docker/commits/master | jq -r "((now - (.commit.author.date | fromdateiso8601) )  / (60*60*24)  | trunc)")
+        echo $check
+        echo check=$check >> $GITHUB_ENV
     - name: Checkout
       if: env.check == 0
       uses: actions/checkout@v2
